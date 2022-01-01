@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:myapp="http://www.luxiaomeng.com/author"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.luxiaomeng.com/author http://www.luxiaomeng.com/author.xsd">
+	<myapp:author id="haha" username="luxiaomeng" sex="man"></myapp:author>
+		<bean name="user" class="com.lxm.spring.domain.User">
+			<property name="age" value="13"/>
+			<property name="name" value="zhangsan"/>
+		</bean>
+	<bean name="customer" class="com.lxm.spring.domain.Author">
+		<property name="username" value="zhangsan"/>
+		<property name="address" value="山西省_长治市_壶关县"/>
+	</bean>
+	<bean  class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="propertyEditorRegistrars">
+			<list>
+				<bean class="com.lxm.spring.customEditor.AddressPropertyEditorRegistrar"></bean>
+			</list>
+		</property>
+	</bean>
+<!--	<bean  class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="Address">
+					<value>AddressPropertyEditor</value>
+				</entry>
+			</map>
+		</property>
+	</bean>-->
+<!--	<bean name="user" class="com.lxm.spring.domain.User">-->
+<!--		<property name="age" value="13"/>-->
+<!--		<property name="name" value="zhangsan"/>-->
+<!--	</bean>-->
+</beans>

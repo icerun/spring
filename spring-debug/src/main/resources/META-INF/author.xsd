@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.luxiaomeng.com/author"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.luxiaomeng.com/author"
+			elementFormDefault="qualified">
+
+	<xsd:complexType name="author">
+		<xsd:attribute name="username" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					<![CDATA[ The unique identifier for a bean. ]]>
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="sex" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					<![CDATA[ The origin of the bean. ]]>
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					<![CDATA[ The origin of the bean. ]]>
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="author" type="author">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ The service author config ]]></xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+</xsd:schema>
