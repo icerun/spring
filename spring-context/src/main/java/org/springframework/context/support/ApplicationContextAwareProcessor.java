@@ -71,6 +71,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 	 * Create a new ApplicationContextAwareProcessor for the given context.
 	 */
 	public ApplicationContextAwareProcessor(ConfigurableApplicationContext applicationContext) {
+		//创建ApplicationContextAwareProcessor的时候，完成对applicationContext的赋值
 		this.applicationContext = applicationContext;
 		this.embeddedValueResolver = new EmbeddedValueResolver(applicationContext.getBeanFactory());
 	}
@@ -99,6 +100,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 			}, acc);
 		}
 		else {
+			// 调用Aware接口的方法
 			invokeAwareInterfaces(bean);
 		}
 
@@ -124,6 +126,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 		if (bean instanceof ApplicationStartupAware) {
 			((ApplicationStartupAware) bean).setApplicationStartup(this.applicationContext.getApplicationStartup());
 		}
+		// 判断到当前的Bean为ApplicationContextAware的实现类
 		if (bean instanceof ApplicationContextAware) {
 			((ApplicationContextAware) bean).setApplicationContext(this.applicationContext);
 		}
