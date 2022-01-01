@@ -1,8 +1,11 @@
 package com.lxm.spring.mytest;
 
+import com.lxm.spring.config.PropertyConfig;
 import com.lxm.spring.domain.Author;
+import com.lxm.spring.domain.Person;
 import com.lxm.spring.domain.User;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 功能描述: spring源码阅读入口
@@ -17,10 +20,22 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class MyTest {
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-//		Object bean = applicationContext.getBean("user");
+//		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+////		Object bean = applicationContext.getBean("user");
+////		System.out.println(bean.toString());
+//		Author bean = (Author) applicationContext.getBean("customer");
 //		System.out.println(bean.toString());
-		Author bean = (Author) applicationContext.getBean("customer");
-		System.out.println(bean.toString());
+
+		testPerson();
 	}
+
+	public static void testPerson(){
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(PropertyConfig.class);
+		Person bean = context.getBean(Person.class);
+		System.out.println(bean);
+
+
+	}
+
+
 }
