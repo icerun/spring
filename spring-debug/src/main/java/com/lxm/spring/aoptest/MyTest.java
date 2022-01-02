@@ -1,8 +1,6 @@
-package com.lxm.spring.mytest;
+package com.lxm.spring.aoptest;
 
 import com.lxm.spring.aoptest.config.AopConfig;
-import com.lxm.spring.config.PropertyConfig;
-import com.lxm.spring.domain.Person;
 import com.lxm.spring.aoptest.service.MathCalculator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,14 +17,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class MyTest {
 	public static void main(String[] args) {
-//		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-////		Object bean = applicationContext.getBean("user");
-////		System.out.println(bean.toString());
-//		Author bean = (Author) applicationContext.getBean("customer");
-//		System.out.println(bean.toString());
 
 		testPerson2();
-//		testPerson();
 	}
 
 	public static void testPerson2(){
@@ -34,14 +26,6 @@ public class MyTest {
 		MathCalculator mathCalculator = (MathCalculator) context.getBean("mathCalculator");
 		int divide = mathCalculator.divideNumber(2, 1);
 		System.out.println(divide);
-
-
-	}
-
-	public static void testPerson(){
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(PropertyConfig.class);
-		Person bean = context.getBean(Person.class);
-		System.out.println(bean);
 
 
 	}
