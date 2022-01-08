@@ -654,7 +654,7 @@ public abstract class BeanUtils {
 	 * @param type the type to check
 	 * @return whether the given type represents a "simple" property
 	 * @see org.springframework.beans.factory.support.RootBeanDefinition#DEPENDENCY_CHECK_SIMPLE
-	 * @see org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#checkDependencies
+	 * @see org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory
 	 * @see #isSimpleValueType(Class)
 	 */
 	public static boolean isSimpleProperty(Class<?> type) {
