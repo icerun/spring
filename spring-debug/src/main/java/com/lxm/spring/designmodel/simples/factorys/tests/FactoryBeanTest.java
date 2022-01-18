@@ -3,7 +3,12 @@ package com.lxm.spring.designmodel.simples.factorys.tests;
 import com.lxm.spring.designmodel.simples.factorys.UserFactory;
 import com.lxm.spring.designmodel.simples.factorys.config.UserConfig;
 import com.lxm.spring.designmodel.simples.factorys.domain.User;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @Description
@@ -15,6 +20,8 @@ public class FactoryBeanTest {
 	public static void main(String[] args) throws Exception {
 		test1();
 	}
+
+
 
 	public static void test1() throws Exception {
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(UserConfig.class);
