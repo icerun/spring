@@ -2,6 +2,7 @@ package com.lxm.spring.mytest.myspring.autowire;
 
 import com.lxm.spring.mytest.myspring.autowire.service.User;
 import com.lxm.spring.mytest.myspring.autowire.service.UserService;
+import org.springframework.beans.BeanUtils;
 
 /**
  * 功能描述:
@@ -15,6 +16,8 @@ public class Test {
 		ApplicationContext applicationContext = new ApplicationContext(AppConfig.class);
 		UserService userService = (UserService) applicationContext.getBean("userService");
 		System.out.println(userService.toString());
+
+
 
 	}
 }
